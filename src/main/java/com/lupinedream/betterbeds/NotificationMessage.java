@@ -1,4 +1,4 @@
-package de.themoep.BetterBeds;
+package com.lupinedream.betterbeds;
 
 /**
  * Created by Phoenix616 on 28.01.2015.

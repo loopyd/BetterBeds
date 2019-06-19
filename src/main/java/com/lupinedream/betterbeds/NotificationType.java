@@ -1,7 +1,7 @@
-package de.themoep.BetterBeds;
+package com.lupinedream.betterbeds;
 
-/**
- * Created by Phoenix616 on 28.01.2015.
+/*
+  Created by Phoenix616 on 28.01.2015.
  */
 
 /**
@@ -15,5 +15,5 @@ public enum NotificationType {
         NOONE,
         SLEEPING,
         WORLD,
-        SERVER;
+        SERVER
 }
