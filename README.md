@@ -9,7 +9,7 @@ The original plugin can be found here:
 http://www.spigotmc.org/resources/better-beds.1824/
 
 ## What is this?
-This is an update to a much beloved and popular bukkit / spigot plugin to the newer builds of paper, the superior Minecraft server environment which provides maintained High-Perfomrance patch-updates to Bukkit and Spigot -> https://papermc.io/
+This is an update to a much beloved and popular bukkit / spigot plugin to the newer builds of paper, the superior Minecraft server environment which provides maintained High-Performance patch-updates to Bukkit and Spigot -> https://papermc.io/
 
 This plugin will allow you to provide a more convenient way for large multiplayer servers to roll over to the next day by allowing a certain percentage of people who choose to sleep at night roll the server over to the next day automatically.
 
