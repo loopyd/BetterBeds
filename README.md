@@ -44,8 +44,6 @@ Want to download the new and improved version of the plugin?  Head on over to th
 You will need:  [openJDK 8](https://adoptopenjdk.net/) and [Maven](https://maven.apache.org/)
 Also recommended:  git 
 
-[Back to top](#top)
-
 1. **Clone** or **Download** the contents of this repository.
 
 2. Maven pom.xml and a Jetbrains [Intellij IDEA](https://www.jetbrains.com/idea/) .iml project file has been provided for you.  If you don't fancy using a paid IDE, you can run the following commands from the repository root with maven in your ``PATH`` and the JDK in both your ``PATH`` and ``JAVA_PATH`` environment veriables:
