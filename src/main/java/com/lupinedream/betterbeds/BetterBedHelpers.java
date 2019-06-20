@@ -37,7 +37,7 @@ public class BetterBedHelpers {
         int calculatedPlayers = (playerQuit) ? -1 : 0;
         for(Player p : bbPlugin.getServer().getOnlinePlayers()) {
             if(world.equals(p.getWorld())) {
-                if (!p.isSleeping() && p.hasPermission("betterbeds.ghost") && !p.hasPermission("betterbeds.ghost.buster"))
+                if (!p.isSleeping())
                     return false;
                 if (p.hasPermission("betterbeds.sleep") && !p.hasPermission("betterbeds.ignore") && !worldHelpers.isPlayerAFK(p))
                     calculatedPlayers++;
@@ -93,27 +93,33 @@ public class BetterBedHelpers {
     }
 
     /**
-     * Notifies all the players within a world of skipping the night
+     * Notifies all the players within a set scope of skipping the night.
      * @param world The world to send the notification in
      * @param notifymsg The NotificationMessage object to parse/send.
-     * @param mentionedPlayerName The player being mentioned in the message
+     * @param mentionedPlayerUUID The UUID of the player being mentioned in the message
      */
-     public void notifyPlayers(World world, NotificationMessage notifymsg, String mentionedPlayerName) {
+     public void notifyPlayers(World world, NotificationMessage notifymsg, UUID mentionedPlayerUUID) {
         if(notifymsg.getType() != NotificationType.NOONE) {
             HashSet<UUID> playerList = bedGlobals.asleepPlayers.get(world.getUID());
             String msg = buildMsg(notifymsg.getText(),
-                    mentionedPlayerName,
-                    playerList.size(),
+                    worldHelpers.getPlayerNameFromUUID(mentionedPlayerUUID),
+                    playerList != null ? playerList.size() : 0,
                     worldHelpers.countQualifyingPlayers(world));
+
+            /* Build the player list to send the notification based on
+               the value of type. */
             List<Player> pl = new ArrayList<>();
             if (notifymsg.getType() == NotificationType.WORLD)
                 pl = worldHelpers.getPlayers(world);
             else if (notifymsg.getType() == NotificationType.SERVER)
                 pl = new ArrayList<>(bbPlugin.getServer().getOnlinePlayers());
-            else
+            else if (notifymsg.getType() == NotificationType.SLEEPING) {
                 for (Player p : bbPlugin.getServer().getOnlinePlayers())
                     if (playerList.contains(p.getUniqueId()))
                         pl.add(p);
+            }
+            else if (notifymsg.getType() == NotificationType.PLAYER)
+                pl.add(bbPlugin.getServer().getPlayer(mentionedPlayerUUID));
             for (Player p : pl) {
                 p.sendMessage(ChatColor.GOLD + msg);
             }
@@ -126,7 +132,7 @@ public class BetterBedHelpers {
      * @param notifymsg The NotificationMessage object to send.
      */
     public void notifyPlayers(World world, NotificationMessage notifymsg) {
-        notifyPlayers(world, notifymsg, bedGlobals.nameOfLastPlayerToEnterBed.get(world.getUID()));
+        notifyPlayers(world, notifymsg, bedGlobals.lastPlayerToEnterBed);
     }
 
     /**
@@ -151,7 +157,7 @@ public class BetterBedHelpers {
 
             bbPlugin.getLogger().log(Level.INFO, player.getName() + " is not sleeping anymore. " + playerList.size() + "/" + calculatedPlayers + " players are asleep in world " + world.getName());
 
-            notifyPlayers(world, bedMessages.leaveMessage, player.getName());
+            notifyPlayers(world, bedMessages.leaveMessage, player.getUniqueId());
 
             this.checkPlayers(world, false);
             return true;

@@ -14,8 +14,10 @@ public class BedGlobals implements ConfigInterface {
     public double sleepPercentage;
     public int nightSpeed;
     public int transitionTask;
+    public long nightTicks;
+    public long dayTicks;
     public HashMap<UUID, HashSet<UUID>> asleepPlayers;
-    public HashMap<UUID,String> nameOfLastPlayerToEnterBed;
+    public UUID lastPlayerToEnterBed;
 
     public BedGlobals(Plugin plugin) {
         bbPlugin = plugin;
@@ -34,6 +36,8 @@ public class BedGlobals implements ConfigInterface {
             sleepPercentage = sleepPercentage / 100;
         }
         nightSpeed = bbPlugin.getConfig().getInt("nightSpeed");
+        nightTicks = bbPlugin.getConfig().getLong("nightTicks");
+        dayTicks = bbPlugin.getConfig().getLong("dayTicks");
         return true;
     }
 
@@ -45,8 +49,10 @@ public class BedGlobals implements ConfigInterface {
         minPlayers = 2;
         sleepPercentage = 0.5;
         nightSpeed = 0;
+        nightTicks = 12517;
+        dayTicks = 0;
         transitionTask = 0;
         asleepPlayers = new HashMap<>();
-        nameOfLastPlayerToEnterBed = new HashMap<>();
+        lastPlayerToEnterBed = null;
     }
 }

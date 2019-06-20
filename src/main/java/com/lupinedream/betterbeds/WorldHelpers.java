@@ -7,7 +7,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.function.Predicate;
+import java.util.logging.Level;
 
 public class WorldHelpers {
     private static Plugin bbPlugin;
@@ -94,5 +96,36 @@ public class WorldHelpers {
 
     }
 
+    /**
+     * Returns a player name from a Java UUID object.
+     * @param playerUUID - UUID object to look up via Bukkit.
+     * @return String representation of Player's display name.
+     */
+    public String getPlayerNameFromUUID(UUID playerUUID) {
+        String fetchResult = null;
+        try {
+            fetchResult = getPlayerFromUUID(playerUUID).getDisplayName();
+        }
+        catch (Exception e) {
+            bbPlugin.getLogger().log(Level.WARNING, "Failed to fetch player name for UUID: " + playerUUID.toString());
+        }
+        return fetchResult;
+    }
+
+    /**
+     * Returns a player object from a Java UUID object.
+     * @param playerUUID - UUID object to look up via Bukkit.
+     * @return Player Object
+     */
+    public Player getPlayerFromUUID(UUID playerUUID) {
+        Player fetchResult = null;
+        try {
+            fetchResult = bbPlugin.getServer().getPlayer(playerUUID);
+        }
+        catch (Exception e) {
+            bbPlugin.getLogger().log(Level.WARNING, "Failed to fetch player object for UUID: " + playerUUID.toString());
+        }
+        return fetchResult;
+    }
 
 }

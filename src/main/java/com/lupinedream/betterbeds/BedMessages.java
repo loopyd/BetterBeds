@@ -9,7 +9,9 @@ import java.util.logging.Level;
 
 public class BedMessages implements ConfigInterface {
     private Plugin bbPlugin;
-    public NotificationMessage ghostMessage;
+
+    public NotificationMessage mobMessage;
+    public NotificationMessage noSleepMessage;
     public NotificationMessage sleepMessage;
     public NotificationMessage leaveMessage;
     public NotificationMessage wakeMessage;
@@ -22,13 +24,14 @@ public class BedMessages implements ConfigInterface {
 
     public final boolean load() {
         boolean result;
-        ghostMessage = loadNotificationMessage("msg.ghost.type","msg.ghost.text");
+        mobMessage = loadNotificationMessage("msg.mobs.type","msg.mobs.text");
+        noSleepMessage = loadNotificationMessage("msg.noSleep.type", "msg.noSleep.text");
         sleepMessage = loadNotificationMessage("msg.sleep.type","msg.sleep.text");
         leaveMessage = loadNotificationMessage("msg.leave.type","msg.leave.text");
         wakeMessage = loadNotificationMessage("msg.wake.type","msg.wake.text");
         notifyMessage = loadNotificationMessage("msg.notify.type","msg.notify.text");
         notifyOnSingleMessage = loadNotificationMessage("msg.notifyOnSingle.type","msg.notifyOnSingle.text");
-        result = ghostMessage != null & sleepMessage != null & leaveMessage != null & wakeMessage != null & notifyMessage != null & notifyOnSingleMessage != null;
+        result = mobMessage != null & sleepMessage != null & leaveMessage != null & wakeMessage != null & notifyMessage != null & notifyOnSingleMessage != null;
         return result;
     }
 
@@ -60,7 +63,8 @@ public class BedMessages implements ConfigInterface {
     }
 
     public final void setDefaults() {
-        ghostMessage = null;
+        mobMessage = null;
+        noSleepMessage = null;
         sleepMessage = null;
         leaveMessage = null;
         wakeMessage = null;

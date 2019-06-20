@@ -7,12 +7,14 @@ package com.lupinedream.betterbeds;
 /**
  * Enum to specify who should get a notification message.
  * NOONE - Don't display the message to anyone
- * SLEEPING - Only players who lye in a bed
+ * PLAYER - Only to players who trigger a BetterBeds action
+ * SLEEPING - Only players who lay in a bed
  * WORLD - Every player who is in the same world
  * SERVER - Every player on the server
  */
 public enum NotificationType {
         NOONE,
+        PLAYER,
         SLEEPING,
         WORLD,
         SERVER
