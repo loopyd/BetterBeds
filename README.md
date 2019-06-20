@@ -35,7 +35,7 @@ They happen.  You can report them by opening an issue ticket.
 
 [Back to top](#top)
 
-## Building from source
+# Building from source
 
 You will need:  [openJDK 8](https://adoptopenjdk.net/) and [Maven](https://maven.apache.org/)
 Also recommended:  git 
