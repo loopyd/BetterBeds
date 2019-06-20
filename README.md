@@ -24,8 +24,6 @@ Are your buddies AFK? Is one of 'em stuck down a strip mine or 400 blocks away f
 - Allows fully customizable notifications for the server when night rolls around and when players choose to sleep.
 - Ignores players who are AFK or offline, they won't count toward your needed sleep percentage!
 
-[Back to top](#top)
-
 ## Improvements
 - Uses the new paper/spigot api to provide a better experience.
 - Complete, more professional code rebase!
@@ -36,6 +34,10 @@ Are your buddies AFK? Is one of 'em stuck down a strip mine or 400 blocks away f
 ## Releases
 
 Want to download the new and improved version of the plugin?  Head on over to the [Releases](https://github.com/loopyd/BetterBeds/releases) section
+
+# Bugs or Issues ?
+
+They happen.  You can report them by opening an issue ticket.
 
 [Back to top](#top)
 
@@ -73,7 +75,3 @@ This project is free and open source, and always open to new ideas.  Follow thes
 [Buy me a BetterDrink](https://www.paypal.com/paypalme2/snowflowerwolf) :-)*
 
 [Back to top](#top)
-
-# Bugs or Issues ?
-
-They happen.  You can report them by opening an issue ticket.
