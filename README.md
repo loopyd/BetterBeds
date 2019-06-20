@@ -16,25 +16,35 @@ Getting tired of your chat's "Go sleep !" spam at night? This plugin can resolve
 
 Are your buddies AFK? Is one of 'em stuck down a strip mine or 400 blocks away from their beds? No worries, as long as a certain number of players choose to sleep, your night rollover is covered thanks to BetterBeds!
 
-# Features
+[Back to top](#top)
+
+## Features
 - Allows a set percentage of players to roll the server over to the next day if they choose to sleep.
 - Properly configured permissions nodes for LuckPerms / Vault.
 - Allows fully customizable notifications for the server when night rolls around and when players choose to sleep.
 - Ignores players who are AFK or offline, they won't count toward your needed sleep percentage!
 
-# Improvements
+[Back to top](#top)
+
+## Improvements
 - Uses the new paper/spigot api to provide a better experience.
 - Complete, more professional code rebase!
 - Custom bed handler that fixes / patches up vanilla's message notifications and elliminates the issues of the old plugin.
 
-# Releases
+[Back to top](#top)
+
+## Releases
 
 Want to download the new and improved version of the plugin?  Head on over to the [Releases](https://github.com/loopyd/BetterBeds/releases) section
 
-# Building from source
+[Back to top](#top)
+
+## Building from source
 
 You will need:  [openJDK 8](https://adoptopenjdk.net/) and [Maven](https://maven.apache.org/)
 Also recommended:  git 
+
+[Back to top](#top)
 
 1. **Clone** or **Download** the contents of this repository.
 
@@ -47,7 +57,9 @@ Also recommended:  git
 
 The contents of this repository as-is should __never__ be considered to be in a **production-ready** state.  If you would like production-ready builds, please check the [Releases](https://github.com/loopyd/BetterBeds/releases) section.
 
-# Contributing
+[Back to top](#top)
+
+## Contributing
 
 This project is free and open source, and always open to new ideas.  Follow these instructions to contribute:
 
@@ -61,6 +73,8 @@ This project is free and open source, and always open to new ideas.  Follow thes
 
 *Plugin development not your thing, but you love the plugin and what it's done for your Minecraft community?  Donations are welcome: 
 [Buy me a BetterDrink](https://www.paypal.com/paypalme2/snowflowerwolf) :-)*
+
+[Back to top](#top)
 
 # Bugs or Issues ?
 
