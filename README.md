@@ -17,13 +17,15 @@ This plugin will allow you to provide a more convenient way for large multiplaye
 # BetterBeds Features
 - Allows a set percentage of players to roll the server over to the next day if they choose to sleep.
 - Allows fully customizable notifications for the server when night rolls around and when players choose to sleep.
+- Custimize the time of the minecraft day/night that players can sleep in their beds.
+- Enable players to sleep in locations they otherwise wouldn't normally, such as the nether.
 - Ignores players who are AFK or offline, they won't count toward your needed sleep percentage!
-- Properly configured permissions nodes for LuckPerms / Vault.
 
 ## Improvements
 - Uses the new paper/spigot api to provide a better experience.
 - Complete, more professional code rebase!
 - Custom bed handler that fixes / patches up vanilla's message notifications and elliminates the issues of the old plugin.
+- Properly configured permissions nodes for LuckPerms / Vault.
 
 ## Releases
 
